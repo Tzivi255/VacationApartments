@@ -1,0 +1,68 @@
+#filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.filter > * {
+    flex: 1; 
+}
+
+.custom-textfield {
+    margin-bottom: 3px !important;
+}
+
+#login{
+    margin-top: -130px;
+}
+.MuiFormControlLabel-root {
+    display: none;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dialog-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.dialog-item svg {
+    margin-right: 8px;
+    color: #007bff; /* צבע אייקונים */
+}
+
+.dialog-button {
+    background-color: #007bff;
+    color: white;
+    &:hover {
+        background-color: #0056b3;
+    }
+}
+.css-1yuhvjn {
+    margin-top: -300px !important;
+}
+
+.custom-dialog {
+    width: 500px; /* רוחב מותאם אישית */
+    height: 700px; /* גובה מותאם אישית */
+    max-width: none; /* מבטל את המגבלה של maxWidth */
+}
