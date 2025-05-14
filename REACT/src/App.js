@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 // import { Main } from './homework/students/componenta/Main';
 import { Main } from './NodeProject/Components/Main';
-import { CardFormMain } from './homework/CardForm/CardFormMain'
 function App() {
   return (
     <div className="App">

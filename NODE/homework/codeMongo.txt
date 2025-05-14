@@ -1,4 +1,0 @@
-U8RlJnkfKVnjxTmn
-
-
-URI=mongodb+srv://t0527198255:U8RlJnkfKVnjxTmn@cluster0.lxrns.mongodb.net/
