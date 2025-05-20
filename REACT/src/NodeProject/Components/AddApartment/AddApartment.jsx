@@ -28,7 +28,7 @@ export const AddApartment = () => {
     const [categories, setCategories] = useState([]);
     const [cities, setCities] = useState([]);
     useEffect(() => {
-        if (user.email == undefined) {
+        if (user && user.email == undefined) {
             nav(`/login`)
         }
         if (editApartment == true) {

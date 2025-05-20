@@ -21,7 +21,6 @@ import { setCurrentEditApartment, setEditApartment } from "../../Redux/Apartmant
 
 
 export const Apartment = (props) => {
-
     const nav = useNavigate()
     let Dispatch = useDispatch()
     let currentUser = useSelector(state => state.user.currentUser)
@@ -47,7 +46,7 @@ export const Apartment = (props) => {
         props.deleteApartment(a._id)
     };
 
-    const handleConfirmDelete = () => {
+    const handleConfirmDelete = () => {        
         props.deleteApartment(a._id);
         setConfirmOpen(false); // סוגר את הדיאלוג
     };
@@ -97,11 +96,11 @@ export const Apartment = (props) => {
                         <Gallery apartment={a}></Gallery>
                     </AspectRatio>
                     <CardContent orientation="horizontal">
-                        {((currentUser && a.advertiser && currentUser.email == a.advertiser.email) || (props.user == "yes")) && <IconButton aria-label="delete" size="large"
+                        {( (location.pathname=='/myApartments')) && <IconButton aria-label="delete" size="large"
                             onClick={handleEditClick}>
                             <EditIcon fontSize="inherit" />
                         </IconButton>}
-                        {((currentUser && a.advertiser && currentUser.email == a.advertiser.email) || (props.user == "yes")) && <IconButton aria-label="delete" size="large"
+                        {( (location.pathname=='/myApartments')) && <IconButton aria-label="delete" size="large"
                             onClick={handleDeleteClick}>
                             <DeleteIcon fontSize="inherit" />
                         </IconButton>}

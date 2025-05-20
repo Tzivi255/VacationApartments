@@ -37,7 +37,6 @@ export const Login = () => {
             'email': formData.get('email'),
             'password': formData.get('password')
         }
-        // פה צריך להוסיף את כל הלוגיקה וליצור טוקן
         login(user).then(data => {
             Dispatch(setCurrentUser(data.data.user))
             Dispatch(setToken(data.data.token))
@@ -57,7 +56,7 @@ export const Login = () => {
         <AppProvider theme={theme}>
             <Box component="form" onSubmit={(event) => {
                 event.preventDefault();
-                const formData = new FormData(event.currentTarget); // ודא שהשורה הזו כאן
+                const formData = new FormData(event.currentTarget); 
                 signIn(providers[0], formData);
             }} sx={{ mt: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <TextField

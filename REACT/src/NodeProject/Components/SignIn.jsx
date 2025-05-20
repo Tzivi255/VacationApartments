@@ -25,7 +25,7 @@ export const SignIn = () => {
             Dispatch(setCurrentUser(data.data.user))
             Dispatch(setToken(data.data.token))
             alert("add advertiser")
-            nav('/advertiser')
+            nav('/addApartment')
             console.log(data);
         }).catch(err => {
             console.log(err);

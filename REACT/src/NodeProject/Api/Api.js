@@ -1,7 +1,6 @@
 import axios from "axios"
 
-axios.defaults.baseURL = `http://localhost:3001/`
-// http://localhost:3001/apartment
+axios.defaults.baseURL = `http://localhost:3000/`
 
 export const resetPassword = (advertiserEmail) => {
     return axios.get(`advertiser/resetPassword/${advertiserEmail}`)
@@ -17,7 +16,6 @@ export const updatePassword=(pass,email,token)=>{
         }
     });
 }
-// 
 
 export const getAllApartments = () => {
     return axios.get('apartment')
@@ -64,8 +62,8 @@ export const deleteApartment = (id, apartmentId, token) => {
 export const createApartment = (apartment,token) => {
     return axios.post(`apartment`, apartment,{
         headers: {
-          Authorization: `Bearer ${token}`,  // הוספת כותרת Authorization עם הטוקן
-          'Content-Type': 'multipart/form-data'  // ציון שסוג התוכן הוא JSON
+          Authorization: `Bearer ${token}`, 
+          'Content-Type': 'multipart/form-data' 
         },
       })
 }
@@ -78,8 +76,8 @@ export const getApartments = (apartment) => {
 export const updateApartment = (apartmentId, data,token) => {
     return axios.patch(`apartment/${apartmentId}`, data,{
         headers: {
-          Authorization: `Bearer ${token}`,  // הוספת כותרת Authorization עם הטוקן
-          'Content-Type': 'multipart/form-data'  // ציון שסוג התוכן הוא JSON
+          Authorization: `Bearer ${token}`,  
+          'Content-Type': 'multipart/form-data' 
         },
       })
 }

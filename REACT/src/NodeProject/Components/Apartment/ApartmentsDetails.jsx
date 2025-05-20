@@ -1,6 +1,6 @@
 // import '../style.css'
 import { useEffect, useState } from "react"
-import { Outlet } from "react-router"
+import { Outlet, useLocation } from "react-router"
 import { byAdvertiser, deleteApartment, getAllApartments, getAllCategory, getAllCity, getFilterApartment } from "../../Api/Api"
 import { Apartment } from "./Apartment"
 import { Filter } from "../Filter"
@@ -10,6 +10,7 @@ import { useSelector } from "react-redux"
 
 
 export const ApartmentsDetails = (props) => {
+    const location = useLocation();
     const currentUser = useSelector(state => state.user.currentUser)
     let token = useSelector(state => state.user.token)
     const [apartments, setApartments] = useState([])
@@ -28,10 +29,14 @@ export const ApartmentsDetails = (props) => {
     };
 
     useEffect(() => {
-        if (props.user == "yes") {
+        // if (props.user == "yes") {
+        if(currentUser && location.pathname=='/myApartments'){
+            
             byAdvertiser(currentUser ? currentUser._id : null, token)
                 .then(a => {
                     setApartments(a.data)
+                    // console.log('byAdvertiser',a.data);
+                    
                 })
                 .catch(err => {
                     console.log(err);
@@ -104,8 +109,8 @@ export const ApartmentsDetails = (props) => {
                     variant="outlined" onChange={(e) => handlesetAmountOfMoney(e)} />
             </div>}
             <div className="apartments">
-                {console.log('apartments', apartments)}
-
+                {/* {console.log(apartments)} */}
+                
                 {apartments && apartments.map(a =>
                     <Apartment key={a._id} a={a} deleteApartment={deleteCurrentApartment} user={"yes"}></Apartment>)}
             </div>

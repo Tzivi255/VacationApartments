@@ -32,13 +32,15 @@ export const Home = (props) => {
     const [advertiserApartment, setAdvertiserApartment] = React.useState([])
     const navigate = useNavigate();
     React.useEffect(() => {
-        byAdvertiser(user._id, token)
-            .then(data => {
-                setAdvertiserApartment(data.data)
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        if (user) {
+            byAdvertiser(user._id, token)
+                .then(data => {
+                    setAdvertiserApartment(data.data)
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
     }, [user, editApartment])
 
     const NAVIGATION = [

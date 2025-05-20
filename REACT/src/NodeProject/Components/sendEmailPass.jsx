@@ -7,7 +7,6 @@ export const SendEmailPass = (props) => {
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
   const [token, setToken] = useState('');
   const [tempPassword, setTempPassword] = useState('');
-  // const [email, setEmail] = useState('');
 
   const handleResetPassword = async () => {
     try {
@@ -15,7 +14,6 @@ export const SendEmailPass = (props) => {
       console.log("שליחת מייל הצליח", data);
       setToken(data.data.token);
       setTempPassword(data.data.tempPassword);
-      // setEmail(data.data.advertiserEmail);
       setShowUpdatePassword(true);
     } catch (err) {
       console.log("נכשל שליחת מייל", err);

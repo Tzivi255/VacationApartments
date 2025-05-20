@@ -37,7 +37,7 @@ export const Filter = (props) => {
                     id="filterSelectLabel"
                     value={filter}
                     label={category}
-                    onChange={handleChange} // העברת האירוע ישירות
+                    onChange={handleChange} 
                 >
                     <MenuItem value="ללא סינון">
                         <em>ללא סינון</em>

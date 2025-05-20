@@ -21,12 +21,11 @@ export const AddFromList = ({ list, setList, item, setItem, name, getList }) => 
             });
     }, []);
 
-    // עדכון item עם ערך ברירת מחדל כאשר הקומפוננטה נטענת
     useEffect(() => {
         if (item) {
-            setItem(item); // אם יש ערך ב-item, הוא יוגדר כברירת מחדל
+            setItem(item); 
         }
-    }, [item]); // התלות ב-item כדי לעדכן רק כאשר הוא משתנה
+    }, [item]); 
 
     return (
         <>

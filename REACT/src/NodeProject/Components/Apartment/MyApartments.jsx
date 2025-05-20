@@ -8,7 +8,7 @@ export const MyApartments = () => {
     let nav = useNavigate()
     let currentUser = useSelector(state => state.user.currentUser)
     useEffect(() => {
-        if (currentUser.email == undefined) {
+        if (currentUser && currentUser.email == undefined) {
             nav("/login")
         }
     }, [])

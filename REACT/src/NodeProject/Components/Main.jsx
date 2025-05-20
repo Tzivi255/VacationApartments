@@ -8,7 +8,6 @@ export const Main = () => {
     return <>
         <Provider store={store}>
             <BrowserRouter>
-                {/* <Nav></Nav> */}
                 <Routing></Routing>
             </BrowserRouter>
         </Provider>
