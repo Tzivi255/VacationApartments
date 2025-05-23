@@ -30,10 +30,10 @@ mongoose.connect(process.env.LOCAL_URI)
 app.use(bodyParser.json())
 
 
-app.use('/category', categoryRouter)
-app.use('/city', cityRouter)
-app.use('/advertiser', advertiserRouter)
-app.use('/apartment', apartmentRouter)
+app.use('/api/category', categoryRouter)
+app.use('/api/city', cityRouter)
+app.use('/api/advertiser', advertiserRouter)
+app.use('/api/apartment', apartmentRouter)
 app.listen(port, () => {
     console.log(`run in http://localhost:${port}`);
 })
